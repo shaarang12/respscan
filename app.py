@@ -53,6 +53,7 @@
 
 
 import streamlit as st
+#tensor
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.applications import resnet as rt
