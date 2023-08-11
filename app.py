@@ -60,7 +60,7 @@ from PIL import Image
 from keras.models import load_model
 
 # Load the saved model
-model = load_model(ModelWeights.h5)
+model = load_model('ModelWeights.h5')
 
 # Define class labels
 class_labels = ['ACA', 'N', 'SCC']  # Replace with your actual class labels
