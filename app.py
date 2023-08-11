@@ -84,9 +84,9 @@ def main():
         if st.button("Predict"):
             # Preprocess the image
             input_image = preprocess_image(image)
-
+            processed_image = rt.preprocess_input(input_image.copy())
             # Perform prediction
-            predictions = model.predict(input_image)
+            predictions = model.predict(processed_image)
             predicted_class = np.argmax(predictions, axis = 1)
             #Adenocarcinoma, Normal, Squamous Cell Carcinoma
             if(predicted_class == [0]):
