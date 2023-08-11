@@ -70,7 +70,7 @@ def preprocess_image(image):
     image = image.resize((224, 224))  # Resize image to match model input size
     imagen = img_to_array(image) / 255.0  # Normalize pixel values to [0, 1]
     imageb = np.expand_dims(imagen, axis=0)  # Add batch dimension
-    return imageb
+    return imageb.copy()
 
 def main():
     st.title("Image Classification App")
@@ -85,17 +85,18 @@ def main():
         if st.button("Predict"):
             # Preprocess the image
             input_image = preprocess_image(image)
-            processed_image = rt.preprocess_input(input_image.copy())
+            processed_image = rt.preprocess_input(input_image)
             # Perform prediction
             predictions = model.predict(processed_image)
             predicted_class = np.argmax(predictions, axis = 1)
+            st.write(predicted_class)
             #Adenocarcinoma, Normal, Squamous Cell Carcinoma
-            if(predicted_class == [0]):
-                st.write(f"Predicted class: Adenocarcinoma")
-            elif(predicted_class == [1]):
-                st.write(f"Predicted class: Benign Tissue")
-            else:
-                st.write(f"Predicted class: Squamous Cell Carcinoma")
+            # if(predicted_class == [0]):
+            #     st.write(f"Predicted class: Adenocarcinoma")
+            # elif(predicted_class == [1]):
+            #     st.write(f"Predicted class: Benign Tissue")
+            # else:
+            #     st.write(f"Predicted class: Squamous Cell Carcinoma")
 
 if __name__ == "__main__":
     main()
