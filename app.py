@@ -91,7 +91,7 @@ def main():
             #Adenocarcinoma, Normal, Squamous Cell Carcinoma
             if(predicted_class == [0]):
                 st.write(f"Predicted class: {class_labels[predicted_class]}")
-            else if(predicted_class == [1]):
+            elif(predicted_class == [1]):
                 st.write(f"Predicted class: {class_labels[predicted_class]}")
             else:
                 st.write(f"Predicted class: {class_labels[predicted_class]}")
