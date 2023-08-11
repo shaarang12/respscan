@@ -55,7 +55,7 @@
 import streamlit as st
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.applications import ResNet50
+from tensorflow.keras.applications import resnet as rt
 from PIL import Image
 from keras.models import load_model
 
