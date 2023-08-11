@@ -58,6 +58,7 @@ import tensorflow as tf
 from tensorflow.keras.applications import resnet as rt
 from PIL import Image
 from keras.models import load_model
+from tensorflow.keras.utils import img_to_array
 
 # Load the saved model
 model = load_model('ModelWeights.h5')
@@ -67,9 +68,9 @@ class_labels = ['ACA', 'N', 'SCC']  # Replace with your actual class labels
 
 def preprocess_image(image):
     image = image.resize((224, 224))  # Resize image to match model input size
-    image = np.array(image) / 255.0  # Normalize pixel values to [0, 1]
-    image = np.expand_dims(image, axis=0)  # Add batch dimension
-    return image
+    imagen = img_to_array(image) / 255.0  # Normalize pixel values to [0, 1]
+    imageb = np.expand_dims(imagen, axis=0)  # Add batch dimension
+    return imageb
 
 def main():
     st.title("Image Classification App")
