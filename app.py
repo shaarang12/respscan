@@ -90,11 +90,11 @@ def main():
             predicted_class = np.argmax(predictions, axis = 1)
             #Adenocarcinoma, Normal, Squamous Cell Carcinoma
             if(predicted_class == [0]):
-                st.write(f"Predicted class: {class_labels[predicted_class]}")
+                st.write(f"Predicted class: Adenocarcinoma")
             elif(predicted_class == [1]):
-                st.write(f"Predicted class: {class_labels[predicted_class]}")
+                st.write(f"Predicted class: Benign Tissue")
             else:
-                st.write(f"Predicted class: {class_labels[predicted_class]}")
+                st.write(f"Predicted class: Squamous Cell Carcinoma")
 
 if __name__ == "__main__":
     main()
