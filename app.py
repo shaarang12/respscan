@@ -62,7 +62,7 @@ from keras.models import load_model
 from tensorflow.keras.utils import img_to_array
 
 # Load the saved model
-model = load_model('ModelWeights.h5')
+#model = load_model('ModelWeights.h5')
 
 # Define class labels
 class_labels = ['ACA', 'N', 'SCC']  # Replace with your actual class labels
