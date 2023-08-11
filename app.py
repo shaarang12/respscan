@@ -87,9 +87,14 @@ def main():
 
             # Perform prediction
             predictions = model.predict(input_image)
-            predicted_class = np.argmax(predictions[0])
-
-            st.write(f"Predicted class: {class_labels[predicted_class]}")
+            predicted_class = np.argmax(predictions, axis = 1)
+            #Adenocarcinoma, Normal, Squamous Cell Carcinoma
+            if(predicted_class == [0]):
+                st.write(f"Predicted class: {class_labels[predicted_class]}")
+            else if(predicted_class == [1]):
+                st.write(f"Predicted class: {class_labels[predicted_class]}")
+            else:
+                st.write(f"Predicted class: {class_labels[predicted_class]}")
 
 if __name__ == "__main__":
     main()
